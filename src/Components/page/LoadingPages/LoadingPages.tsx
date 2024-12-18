@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 
 import BackgroundImg from "../../../../assets/svg/loading_background.svg";
-import LOGO from "../../../../assets/svg/Franders.svg"
+import LOGO from "../../../../assets/svg/logo_1.svg"
 
 export default function LoadingPages() {
   return (
