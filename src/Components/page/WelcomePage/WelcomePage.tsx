@@ -2,18 +2,29 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import WelcomeArt from "../../../../assets/svg/welcome_page_art.svg";
 import TextLogo from '../../../baseui/TextLogo/TextLogo';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-const WelcomePage = () => {
+// Définir le type des paramètres pour la navigation
+type RootStackParamList = {
+  Welcome_Page: undefined;
+  Otp_Page: undefined;
+};
+
+// Props pour l'écran WelcomePage
+type Props = NativeStackScreenProps<RootStackParamList, 'Welcome_Page'>;
+
+const WelcomePage: React.FC<Props> = ({ navigation }) => {
   const handlePrivacyPolicyPress = () => {
     console.log("Privacy Policy Pressed");
   };
 
   const handleTeamServicePress = () => {
-    console.log("Teams of Service Pressed");
+    console.log("Terms of Service Pressed");
   };
 
   const handleAgreeAndContinue = () => {
     console.log("Agree and Continue Pressed");
+    navigation.navigate('Otp_Page'); // Navigation vers l'écran OTP
   };
 
   return (
@@ -63,9 +74,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "space-between",
+    paddingVertical: 20,
   },
   titleStyle: {
-    marginTop: 100,
+    marginTop: 50,
     color: "#000",
     fontSize: 24,
     fontWeight: "bold",
@@ -81,7 +93,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginHorizontal: 30,
     marginBottom: 20,
-    marginTop: 10,	
   },
   linkStyle: {
     color: "#0c42cc",
