@@ -2,7 +2,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 
 import BackgroundImg from "../../../../assets/svg/loading_background.svg";
-import LOGO from "../../../../assets/svg/logo_1.svg"
+import LOGO from "../../../../assets/svg/Franders (2).svg"
+
 
 export default function LoadingPages() {
   return (
@@ -11,9 +12,9 @@ export default function LoadingPages() {
       <BackgroundImg />
       </View>
       <View style={styles.contentViewStyle}>
-        <LOGO />
-        <Text>
-            Franksapp
+        <LOGO width="78" height="78" />
+        <Text style={styles.titleStyle}>
+            Franders
         </Text>
       </View>
     </View>
@@ -35,6 +36,13 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     width:"100%",
     height:"100%",
+    //flexDirection: "row",
   },
+  titleStyle:{
+    color:"#000",
+    fontSize: 35,
+    fontWeight: "500",
+    marginTop: 12,
+  }
 
 });
