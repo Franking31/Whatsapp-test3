@@ -14,14 +14,19 @@ const WelcomePage = () => {
 
   const handleAgreeAndContinue = () => {
     console.log("Agree and Continue Pressed");
-    // Ajoutez ici la logique pour continuer
   };
 
   return (
     <View style={styles.root}>
+      {/* Titre */}
       <Text style={styles.titleStyle}>Welcome to FRANDERS</Text>
-      {/* Rendre le SVG avec une taille */}
-      <WelcomeArt width={200} height={200} />
+
+      {/* Illustration */}
+      <View style={styles.imageContainer}>
+        <WelcomeArt width={250} height={250} />
+      </View>
+
+      {/* Texte explicatif */}
       <Text style={styles.descStyle}>
         Read our{' '}
         <Text style={styles.linkStyle} onPress={handlePrivacyPolicyPress}>
@@ -33,13 +38,19 @@ const WelcomePage = () => {
         </Text>
         .
       </Text>
+
+      {/* Bouton */}
       <TouchableOpacity
         style={styles.buttonStyle}
         onPress={handleAgreeAndContinue}
       >
         <Text style={styles.buttonText}>AGREE AND CONTINUE</Text>
       </TouchableOpacity>
-      <TextLogo />
+
+      {/* Logo */}
+      <View style={styles.logoContainer}>
+        <TextLogo />
+      </View>
     </View>
   );
 };
@@ -48,28 +59,29 @@ export default WelcomePage;
 
 const styles = StyleSheet.create({
   root: {
-    display: "flex",
+    flex: 1,
+    backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
-    backgroundColor: "#fff", // Ajoutez une couleur de fond si nécessaire
-    paddingTop: 10,
+    justifyContent: "space-between",
   },
   titleStyle: {
+    marginTop: 100,
     color: "#000",
-    fontSize: 20,
-    fontWeight: "500",
-    marginBottom: 20,
+    fontSize: 24,
+    fontWeight: "bold",
   },
-  contenStyle:{},
-  LogoStyle:{},
+  imageContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   descStyle: {
+    fontSize: 14,
     color: "#000",
-    fontSize: 13,
-    fontWeight: "400",
-    marginBottom: 20,
     textAlign: "center",
-    paddingHorizontal: 20,
+    marginHorizontal: 30,
+    marginBottom: 20,
+    marginTop: 10,	
   },
   linkStyle: {
     color: "#0c42cc",
@@ -79,14 +91,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#00A884",
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 20,
+    borderRadius: 25,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 20,
+    marginBottom: 30,
+    width: "80%",
   },
   buttonText: {
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  logoContainer: {
+    alignItems: "center",
+    marginBottom: 10,
   },
 });

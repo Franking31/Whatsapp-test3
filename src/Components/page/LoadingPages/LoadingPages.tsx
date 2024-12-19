@@ -3,6 +3,7 @@ import React from 'react';
 
 import BackgroundImg from "../../../../assets/svg/loading_background.svg";
 import LOGO from "../../../../assets/svg/Franders (2).svg"
+import TextLogo from '../../../baseui/TextLogo/TextLogo';
 
 
 export default function LoadingPages() {
@@ -16,6 +17,7 @@ export default function LoadingPages() {
         <Text style={styles.titleStyle}>
             Franders
         </Text>
+        <TextLogo />
       </View>
     </View>
   );
