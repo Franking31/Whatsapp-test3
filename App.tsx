@@ -6,13 +6,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoadingPages from './src/Components/page/LoadingPages/LoadingPages';
 import WelcomePage from './src/Components/page/WelcomePage/WelcomePage';
-import OtpPage from './src/Components/page/Otp/OtpPage';
+import OtpPage from './src/Components/page/LoginPage/LoginPage';
 
 // Déclaration du type pour les noms d'écran (utile pour éviter les erreurs dans la navigation)
 type RootStackParamList = {
   Loading_Page: undefined;
   Welcome_Page: undefined;
-  Otp_Page: undefined;
+  Login_Page: undefined;
 };
 
 // Création du stack avec typage
@@ -29,7 +29,7 @@ export default function App() {
       >
         <Stack.Screen name="Loading_Page" component={LoadingPages} />
         <Stack.Screen name="Welcome_Page" component={WelcomePage} />
-        <Stack.Screen name="Otp_Page" component={OtpPage} />
+        <Stack.Screen name="Login_Page" component={OtpPage} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

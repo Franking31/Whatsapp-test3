@@ -7,7 +7,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 // Définir le type des paramètres pour la navigation
 type RootStackParamList = {
   Welcome_Page: undefined;
-  Otp_Page: undefined;
+  Login_Page: undefined;
 };
 
 // Props pour l'écran WelcomePage
@@ -24,7 +24,7 @@ const WelcomePage: React.FC<Props> = ({ navigation }) => {
 
   const handleAgreeAndContinue = () => {
     console.log("Agree and Continue Pressed");
-    navigation.navigate('Otp_Page'); // Navigation vers l'écran OTP
+    navigation.navigate('Login_Page'); // Navigation vers l'écran OTP
   };
 
   return (
